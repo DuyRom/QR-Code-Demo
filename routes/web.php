@@ -19,5 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get('/items', [ItemController::class, 'index'])->name('items.index');
-Route::get('/items/{id}', [ItemController::class, 'show'])->name('items.show');
-Route::get('/items/{id}/qrcode', [ItemController::class, 'generateQrCode'])->name('items.qrcode');
+Route::get('/items/{code}', [ItemController::class, 'show'])->name('items.show');
+Route::get('/items/{code}/qrcode', [ItemController::class, 'generateQrCode'])->name('items.qrcode');
+

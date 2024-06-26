@@ -24,8 +24,8 @@
     <tbody>
     @foreach($items as $item)
       <tr>
-        <td>  <a href="{{ route('items.show', $item->id) }}">{{ $item->name }}</a></td>
-        <td> <a href="{{ route('items.qrcode', $item->id) }}">Tạo mã QR</a></td>
+        <td>  <a href="{{ route('items.show', $item->code) }}">{{ $item->name }}</a></td>
+        <td> <a href="{{ route('items.qrcode', $item->code) }}">Tạo mã QR</a></td>
       </tr>
     @endforeach
     </tbody>

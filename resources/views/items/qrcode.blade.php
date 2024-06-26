@@ -8,7 +8,7 @@
             <h1>Mã QR cho vật tư: {{ $item->name }}</h1>
             <div>{!! $qrCode !!}</div>
             <button class="btn btn-secondary mt-4" onclick="window.print()">In mã QR</button>
-            <a class="btn btn-primary mt-4" href="{{ route('items.show', $item->id) }}">Trở lại</a>
+            <a class="btn btn-primary mt-4" href="{{ route('items.show', $item->code) }}">Trở lại</a>
         </div>
     </div>
 @endsection

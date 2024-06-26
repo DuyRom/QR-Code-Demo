@@ -14,16 +14,16 @@ class ItemController extends Controller
         return view('items.index', compact('items'));
     }
 
-    public function show($id)
+    public function show($code)
     {
-        $item = Item::findOrFail($id);
+        $item = Item::where('code', $code)->firstOrFail();
         return view('items.show', compact('item'));
     }
 
-    public function generateQrCode($id)
+    public function generateQrCode($code)
     {
-        $item = Item::findOrFail($id);
-        $url = route('items.show', $item->id); 
+        $item = Item::where('code', $code)->firstOrFail();
+        $url = route('items.show', $item->code); 
         $qrCode = QrCode::size(200)->generate($url);
         return view('items.qrcode', compact('item', 'qrCode'));
     }
